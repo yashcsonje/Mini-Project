@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Meter Dashboard</title>
+    <link rel="stylesheet" href="D:\mini project\powerpulse 9-04-2025\public\styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <nav class="sidebar">
+            <h2>PowerPulse</h2>
+            <button id="toggleSidebar">☰</button>
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i><span class="text"> Dashboard</span></a></li>
+                <li><a href="#"><i class="fas fa-chart-bar"></i><span class="text"> Reports</span></a></li>
+                <li><a href="#"><i class="fas fa-cog"></i><span class="text"> Settings</span></a></li>
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i><span class="text"> Logout</span></a></li>
+                
+            </ul>
+        </nav>
+        <div class="main-content">
+            <header>
+                <h1>Energy Monitoring</h1>
+                <img src="logo.png" alt="Logo" class="logo">
+            </header>
+            <button id="refreshDataBtn">Refresh</button>
+
+            <!-- Fixed Cards -->
+            <section class="cards-container">
+                <div class="card">
+                    <h3 class="card-title">Real-time Readings</h3>
+                    <div class="reading">
+                        <span class="label">Power Factor:</span>
+                        <span id="powerFactor" class="value">Loading...</span>
+                    </div>
+                    <div class="reading">
+                        <span class="label">Voltage (V):</span>
+                        <span id="voltage" class="value">Loading...</span>
+                    </div>
+                    <div class="reading">
+                        <span class="label">Current (A):</span>
+                        <span id="current" class="value">Loading...</span>
+                    </div>
+                    <div class="reading">
+                        <span class="label">Active Power (kW):</span>
+                        <span id="avg-active-power" class="value">Loading...</span>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Avg Power Factor</h3>
+                    <p id="avg-power-factor">Loading...</p>
+                </div>
+            
+                <div class="card">
+                    <h3>Frequency (Hz)</h3>
+                    <p id="frequency">Loading...</p>
+                </div>
+            </section>
+            
+            <div class="chart-wrapper">
+                <div class="chart-container">
+                    <h2>Voltage Trends</h2>
+                    <canvas id="voltageChart"></canvas>
+                </div>
+                
+                <div class="chart-container">
+                    <h2>Current Trends</h2>
+                    <canvas id="currentChart"></canvas>
+                </div>
+            
+                <!-- <div class="chart-container">
+                    <h2>Power Factor & THD</h2>
+                    <canvas id="thdChart"></canvas>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
